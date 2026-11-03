@@ -6,11 +6,11 @@
 		<link href="../../../_app/immutable/chunks/CptVIHXj.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/CHfFqfNT.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DQG8lHS1.js" rel="modulepreload">
-		<link href="../../../_app/immutable/entry/app.CR9osVrW.js" rel="modulepreload">
+		<link href="../../../_app/immutable/entry/app.DBkHr-ed.js" rel="modulepreload">
 		<link href="../../../_app/immutable/nodes/0.CTf4XHXr.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DK3Fl9T5.js" rel="modulepreload">
-		<link href="../../../_app/immutable/nodes/5.DGEpc5zG.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/B8zbbLWH.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/5.DGp8d1nZ.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DwjHFpnM.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/D2aY45x6.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/B90MN3EE.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/CvTLGnAq.js" rel="modulepreload">
@@ -47,20 +47,20 @@ Use receivedAt for arrival trends and mergedAt for desk activity. The desk conti
 so refresh the export and check the repository’s latest issues and comments before handoff.</p> <h2>Replacement triage rule</h2> <ol><li>Count each report ID once; export pages overlap. Filter to the incident being investigated.</li> <li>Read the body, tenant configuration and channel. The browser’s locale and intake tag are clues, not authority.</li> <li>Use causeOf and sameCause from src/lib/kb/causes.ts with tenantOf from src/lib/kb/locales.ts.
 For a day-first tenant, booking-v3 form reports are hint; other channels/forms are parser.</li> <li>Merge only when the cause is established and matches. Unknown tenants or unplaced reports stay separate for investigation.</li> <li>Record report IDs and the count on each engineering issue; link both issues from the incident.</li> <li>Review the operational triage page against this decision. Keep decision 0001 unchanged as history.</li></ol> <div class="try svelte-gq0h2h"><!--[--><fieldset class="svelte-gq0h2h"><legend>report A</legend> <select aria-label="tenant"><!--[--><option selected="">alder.physio</option><option>copper.studio</option><option>harbour.dental</option><option>kettle.books</option><option>lantern.row</option><option>long.table</option><option>morrow.tax</option><option>nine.lanterns</option><option>pale.harbour</option><option>ridge.clinic</option><option>stone.and.sons</option><!--]--></select> <select aria-label="channel"><!--[--><option>app</option><option>email</option><option selected="">form</option><!--]--></select> <input value="Booking on the wrong date" aria-label="subject"/> <code>hint</code></fieldset><fieldset class="svelte-gq0h2h"><legend>report B</legend> <select aria-label="tenant"><!--[--><option>alder.physio</option><option>copper.studio</option><option>harbour.dental</option><option selected="">kettle.books</option><option>lantern.row</option><option>long.table</option><option>morrow.tax</option><option>nine.lanterns</option><option>pale.harbour</option><option>ridge.clinic</option><option>stone.and.sons</option><!--]--></select> <select aria-label="channel"><!--[--><option>app</option><option>email</option><option selected="">form</option><!--]--></select> <input value="Booking on the wrong date" aria-label="subject"/> <code>parser</code></fieldset><!--]--> <p class="verdict svelte-gq0h2h">different causes — keep apart</p></div> <table><thead><tr><th>case</th><th>same subject</th><th>same cause</th></tr></thead><tbody><!--[--><tr><td>app vs email, same tenant</td><td>no</td><td class="svelte-gq0h2h dup">yes</td></tr><tr><td>same subject, same tenant, different channel</td><td>yes</td><td class="svelte-gq0h2h">no</td></tr><tr><td>same subject, same channel, different tenant</td><td>yes</td><td class="svelte-gq0h2h">no</td></tr><tr><td>different subject, same way in</td><td>no</td><td class="svelte-gq0h2h dup">yes</td></tr><tr><td>no tenant on file</td><td>yes</td><td class="svelte-gq0h2h">no</td></tr><!--]--></tbody></table><!----> <p>The examples include app versus email for the same cause, identical subjects with different causes,
 different subjects with the same cause, and an unknown tenant that must not be merged automatically.
-Counts, examples, timeline and the signature below are produced by the supplied code at render time.</p> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-PV0S-3WCD</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!--]--><!--]--><!----><!--]--><!--]--><!--]--><!----> <!--[-1--><!--]--><!--]-->
+Counts, examples, timeline and the signature below are produced by the supplied code at render time.</p> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-6Y2T-QTHE</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!--]--><!--]--><!----><!--]--><!--]--><!--]--><!----> <!--[-1--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_1l2e5ys = {
+					__sveltekit_1t8ljvh = {
 						base: new URL("../../..", location).pathname.slice(0, -1),
-						version: "1793739538970"
+						version: "1793739623907"
 					};
 
 					const element = document.currentScript.parentElement;
 
 					import("../../../_app/immutable/entry/start.D1HzdfF7.js").then(async (kit) => {
-						kit.init(__sveltekit_1l2e5ys);
-						const app = await import("../../../_app/immutable/entry/app.CR9osVrW.js");
+						kit.init(__sveltekit_1t8ljvh);
+						const app = await import("../../../_app/immutable/entry/app.DBkHr-ed.js");
 						kit.start(app, element, {
 							node_ids: [0, 5],
 							data: [null,null],

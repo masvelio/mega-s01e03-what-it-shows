@@ -4,7 +4,7 @@ title: '0002 · Split #4471 and triage by cause'
 owner: Marcin Maslanka
 status: accepted
 reviewed: '2026-11-03'
-signature: 'Marcin Maslanka · masvelio · S01E03 · 2026-11-03'
+signature: 'v1.eyJzdWIiOiI0MTY5IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTM3Mzk2MDEsImV4cCI6MTc5MzgyNjAwMX0.EMuB-kNk6UrygzM5xdBhXa79mJSc66NuJf3mcCONqyY'
 ---
 
 <script>
