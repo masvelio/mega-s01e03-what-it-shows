@@ -1,0 +1,25 @@
+{
+  "name": "mega-s01e03-what-it-shows",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev --host 127.0.0.1",
+    "build": "vite build",
+    "test": "node --experimental-strip-types scripts/check-analysis.mjs",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "imports": {
+    "#lib/*": "./src/lib/*"
+  },
+  "devDependencies": {
+    "@opentelemetry/api": "1.10.0",
+    "@sveltejs/adapter-static": "4.0.1",
+    "@sveltejs/kit": "3.1.1",
+    "@sveltejs/vite-plugin-svelte": "7.3.1",
+    "mdsvex": "0.12.8",
+    "svelte": "5.57.3",
+    "typescript": "6.0.3",
+    "vite": "8.3.5"
+  }
+}

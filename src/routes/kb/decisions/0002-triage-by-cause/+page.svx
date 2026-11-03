@@ -1,0 +1,90 @@
+---
+layout: runbook
+title: '0002 · Split #4471 and triage by cause'
+owner: Marcin Maslanka
+status: accepted
+reviewed: '2026-11-03'
+signature: 'Marcin Maslanka · masvelio · S01E03 · 2026-11-03'
+---
+
+<script>
+  import IncidentSummary from '#lib/kb/IncidentSummary.svelte';
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import QueueTimeline from '#lib/kb/QueueTimeline.svelte';
+  import DedupeExplorer from '#lib/kb/DedupeExplorer.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+## Decision and scope
+
+This record supersedes [decision 0001](/kb/decisions/0001-dedupe-by-subject)
+and the merge-on-subject rule in [triage](/kb/triage/dedupe).
+The accepted historical record is preserved. The [original incident page](/kb/incidents/4471)
+is also preserved, but its “one issue, one fix” narrative does not match the data its components render.
+
+This is an analysis of the supplied support-kb export through 4 October 2026,
+not proof that either product defect has been fixed. The desk supports multiple products;
+this incident concerns sched-prod booking dates and calendar invites.
+
+<Callout kind="warn">
+Read the computed views before relying on prose, a recent review date, or a “known” status.
+Different subjects can describe the same cause, and identical subjects can hide different causes.
+</Callout>
+
+## What the export actually shows
+
+<IncidentSummary />
+
+<CauseTable ticket={4471} />
+
+### Parser: month-first parsing of day-first dates
+
+The shared parser reads dates month first even for tenants whose locale writes the day first.
+For example, R-41200 (harbour.dental, app) describes 7 April becoming 4 July.
+Use the tenant directory and channel to place the report, not the browser locale or intake tag.
+The majority cause belongs to #4471; keep it separate from the form-hint defect below.
+Engineering should make the shared parsing contract agree with the tenant date format and verify
+ambiguous day/month inputs through app, email, and the older booking form.
+
+### Hint: booking-v3 gives day-first tenants a month-first hint
+
+The booking-v3 date field prints MM/DD/YYYY, while the form interprets input in the tenant's
+local date order. This is a separate defect for form reports from day-first tenants using booking-v3.
+R-41230 (copper.studio, form) and R-41251 (pale.harbour, form) belong here even though intake tagged them parser.
+Alder Physio, Copper Studio and Pale Harbour use this form in the export.
+Correct the hint and its input contract; a shared-parser fix alone does not resolve this mismatch.
+
+### Evidence limits
+
+The computed footnote identifies reports describing a one-day move. The desk's provided classifier
+places them in the parser group by tenant and channel. Preserve that count, but investigate their
+original scheduling/time-zone evidence before claiming a separate time-zone defect or a confirmed mechanism.
+These are reported symptoms, not reproduced product failures. Do not invent a third cause from wording alone.
+
+## Arrival is not the same as merge time
+
+<QueueTimeline ticket={4471} />
+
+The export starts receiving reports in April, but merges into #4471 begin on 2 July.
+The July merge spike includes earlier reports; it does not prove a July spike in new failures.
+Use receivedAt for arrival trends and mergedAt for desk activity. The desk continues working,
+so refresh the export and check the repository's latest issues and comments before handoff.
+
+## Replacement triage rule
+
+1. Count each report ID once; export pages overlap. Filter to the incident being investigated.
+2. Read the body, tenant configuration and channel. The browser's locale and intake tag are clues, not authority.
+3. Use causeOf and sameCause from src/lib/kb/causes.ts with tenantOf from src/lib/kb/locales.ts.
+   For a day-first tenant, booking-v3 form reports are hint; other channels/forms are parser.
+4. Merge only when the cause is established and matches. Unknown tenants or unplaced reports stay separate for investigation.
+5. Record report IDs and the count on each engineering issue; link both issues from the incident.
+6. Review the operational triage page against this decision. Keep decision 0001 unchanged as history.
+
+<DedupeExplorer />
+
+The examples include app versus email for the same cause, identical subjects with different causes,
+different subjects with the same cause, and an unknown tenant that must not be merged automatically.
+Counts, examples, timeline and the signature below are produced by the supplied code at render time.
+
+<RenderStamp {signature} />
