@@ -6,7 +6,8 @@ The supplied support-kb export is preserved. New decision 0002 separates the two
 
 - Source page: `src/routes/kb/decisions/0002-triage-by-cause/+page.svx`
 - Rendered page: `build/kb/decisions/0002-triage-by-cause/index.html`
-- Proposed tickets: `issues/parser.md` (379 reports), `issues/hint.md` (33 reports)
+- Tickets: [parser #1](https://github.com/masvelio/mega-s01e03-what-it-shows/issues/1) (379 reports), [hint #2](https://github.com/masvelio/mega-s01e03-what-it-shows/issues/2) (33 reports)
+- Course engineering update of 5 October: parser fixed; hint not planned because booking-v3 was retired.
 - Build: Node 22.18.0, `npm ci`, `npm run build`, `npm test`
 - Local view: `npm run preview`; open `/kb/decisions/0002-triage-by-cause/`
 

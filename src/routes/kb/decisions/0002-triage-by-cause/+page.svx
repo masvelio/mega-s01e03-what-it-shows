@@ -23,8 +23,8 @@ and the merge-on-subject rule in [triage](/kb/triage/dedupe).
 The accepted historical record is preserved. The [original incident page](/kb/incidents/4471)
 is also preserved, but its “one issue, one fix” narrative does not match the data its components render.
 
-This is an analysis of the supplied support-kb export through 4 October 2026,
-not proof that either product defect has been fixed. The desk supports multiple products;
+This is an analysis of the supplied support-kb export through 4 October 2026.
+The export alone does not prove a product fix; the subsequent course engineering update is recorded below. The desk supports multiple products;
 this incident concerns sched-prod booking dates and calendar invites.
 
 <Callout kind="warn">
@@ -61,6 +61,18 @@ The computed footnote identifies reports describing a one-day move. The desk's p
 places them in the parser group by tenant and channel. Preserve that count, but investigate their
 original scheduling/time-zone evidence before claiming a separate time-zone defect or a confirmed mechanism.
 These are reported symptoms, not reproduced product failures. Do not invent a third cause from wording alone.
+
+## Engineering outcome — 5 October update
+
+After accepting the two tickets, the [course desk published an engineering update](https://hq.mega.dev/challenges/what-it-shows#engineering-update):
+#4471 was closed on 5 October.
+
+- [Parser issue](https://github.com/masvelio/mega-s01e03-what-it-shows/issues/1): **fixed**, with the stated change `fix(dates): parse dd/mm for eu locales`. Close as completed.
+- [Form-hint issue](https://github.com/masvelio/mega-s01e03-what-it-shows/issues/2): **won't fix**, because the booking-v3 form was retired. Close as not planned; retirement is not a hint-code fix.
+
+These are the course's reported dispositions, not product changes implemented or independently reproduced in this repository.
+Keep both causes, report counts and the replacement triage decision as historical evidence.
+The supplied snapshot below still describes the pre-closure queue; its table's “no ticket of its own” label is historical.
 
 ## Arrival is not the same as merge time
 
